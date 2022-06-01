@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.outerBox{
+    width: 95%;
+    height:800px;
+    background-color: #E0E3ED;
+    margin: auto;
+   
+    border-radius: 10px;
+    
+}
+.mid1{
+    height: 50px;
+}
+.innerBox{
+    width: 80%;
+    height: 90%;
+border-radius: 10px;
+    background-color: #252A40;
+    margin: auto;
+    -webkit-box-shadow: 2px 4px 25px 10px rgba(0,0,0,0.47); 
+    box-shadow: 2px 4px 25px 10px rgba(0,0,0,0.47);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+     
+}
+.right{
+    width: 99%;
+    height: 98%;
+border-radius: 10px;
+    background-color: white;
+    margin-top: 7px;
+}
+.leftTitle{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    padding-left: 20%;
+    padding-top: 20%;
+}
+.leftTitle-b{
+    color: #74778A;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    padding-left: 20%;
+   
+}
+.leftTitle-b1{
+    color: #74778A;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    padding-left: 20%;
+   
+}
+.leftTitle-c{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    padding-left: 20%;
+   
+}
+.leftTitle-d{
+    color: #74778A;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    font-size: 14px;
+   margin-top: 22px;
+   padding-left: 10px;
+   
+   
+}
+.projectsTitle{
+    display: flex;
+}
+.upperRow{
+    display: flex;
+    padding-left: 20%;
+}
+img{
+    width: 100px;
+    height: 100px;
+    margin-left: 25px;
+}
+.upperRow > div{
+ width: 50px;
+ height: 50px;
+ background-position: center; 
+ background-repeat: no-repeat; 
+ background-size: cover; 
+}
+.css-input {
+  
+    font-size: 16px;
+    border-width: 0px;
+padding: 10px;
+    background-color: #3B3F53;
+    color: #ffffff;
+  
+    border-radius: 12px;
+ 
+}
+.css-input:focus {
+    outline:none;
+}
+::placeholder { 
+    color: #74778A;
+    font-size: 12px;
+    opacity: 1; 
+}
