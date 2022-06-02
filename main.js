@@ -2,7 +2,7 @@
 	var arr = ['a','b','c','d','e','f','g','aa','ab','cd','ee','ea','gt','hfg','we']
     var subarr = ['Fruit','cars','city','islands','mountains','animals','comp','bikes','guitars','food','trees','TV','movies','colors','phones']
 		createElements();
-//createMenuElements();
+createMenuElements();
 	const searchInpt = document.getElementById('search');
 	const box =  document.querySelectorAll("main div");
 			
