@@ -54,7 +54,7 @@ createMenuElements();
   var root = document.getElementById('right-div-grid');
 	 const newDiv = document.createElement("div");
      
-     newDiv.classList.add("projectBox"+i ,"projectBox");
+     newDiv.classList.add("projectBox");
     
 	  root.appendChild(newDiv);
 	   const title = document.createElement("h4");
