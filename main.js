@@ -46,6 +46,33 @@
 	
 	  
 	}
+
+	function createElements(){
+	
+	for (let i = 0; i < arr.length; i++) {
+  var root = document.getElementById('right-div-grid');
+	 const newDiv = document.createElement("div");
+     
+     newDiv.classList.add("projectBox"+i ,"projectBox");
+    
+	  root.appendChild(newDiv);
+	   const title = document.createElement("h4");
+	   newDiv.appendChild(title);
+
+	   title.innerHTML = arr[i];
+       title.className="title";
+       title. addEventListener("click" , function (e){
+	
+	console.log(e.target)})
+       const subtitle = document.createElement("h5");
+       subtitle.className="subTitle";
+	   newDiv.appendChild(subtitle);
+	   subtitle.innerHTML = subarr[i];
+     
+}
+	
+	  
+	}
 	
 
    
