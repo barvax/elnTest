@@ -29,7 +29,7 @@ hr{
 }
 .right-div-grid{
     display: grid;
-    grid-template-columns: 10% 50% 40% ;
+    grid-template-columns: auto auto auto ;
 }
 .right-sub-title{
     font-size: 16px;
