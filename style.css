@@ -63,6 +63,7 @@ border-radius: 10px;
     font-family: 'Ubuntu', sans-serif;
     text-align: left;
     padding-left: 18%;
+    
    
 }
 .leftTitle-d{
@@ -72,6 +73,7 @@ border-radius: 10px;
     font-size: 14px;
    margin-top: 22px;
    padding-left: 10px;
+   display: inline-block;
    
    
 }
@@ -96,7 +98,8 @@ myButton:hover{
 
      
 .projectsTitle{
-    display: inline-block;
+    display: block;
+    
 }
 .upperRow{
     display: grid;
