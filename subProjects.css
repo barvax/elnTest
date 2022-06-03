@@ -1,6 +1,11 @@
-.subProjectsTitle{
+
+.up-arroe-title{
+    margin-top: 22px;
+    margin-left: 20px;
     color: white;
-    font-family: 'Ubuntu', sans-serif;
-    text-align: left;
-    padding-left: 18%;
+    display: none;
+  
+}
+.up-arroe-title:hover{
+    cursor: pointer;
 }
