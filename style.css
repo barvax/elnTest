@@ -77,28 +77,11 @@ border-radius: 10px;
    
    
 }
-.myButton {
-	box-shadow: 1px 2px 30px 0px #4d4d4d;
-	background-color:#b347ed;
-	border-radius:13px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Georgia;
-	font-size:12px;
-	padding:10px 13px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #5c5b5c;
-    margin-left: 50%;
-	
-}
-myButton:hover{
-    cursor: pointer;
-}
+
 
      
 .projectsTitle{
-    display: block;
+    display: flex;
     
 }
 .upperRow{
@@ -156,4 +139,20 @@ padding: 10px;
 .title:hover {
     cursor: pointer;
 }
+.newProjectImg{
+    width: 25px;
+    color: #ffffff;
+   
+    
+}
+.ham1{
+    position:absolute;
+    top: 12%;
+    left: 15%;
+    
+}
+.ham1:hover{
+    cursor: pointer;
+}
+
 
