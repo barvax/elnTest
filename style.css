@@ -145,11 +145,10 @@ padding: 10px;
    
     
 }
-.ham1{
-    position:absolute;
-    top: 12%;
-    left: 15%;
-    
+.ham1 {
+    position: relative;
+    top: 10%;
+    left: -40%;
 }
 .ham1:hover{
     cursor: pointer;

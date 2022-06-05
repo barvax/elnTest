@@ -9,3 +9,13 @@
 .up-arroe-title:hover{
     cursor: pointer;
 }
+.sub-title{
+    font-size: 14px;
+    color: white;
+}
+.sub-title:hover{
+    cursor: pointer;
+}
+.sub-projec-box{
+    background-color:  #74778A;
+}
