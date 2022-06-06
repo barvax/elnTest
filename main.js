@@ -202,6 +202,7 @@ searchInpt.addEventListener("keyup", function (e) {
 });
 
 function ShowRightSide(index) {
+    alert("ShowRightSide(index)");
     tempMainProjectIndex = index;
     var target = document.getElementById('right-div');
     target.style.display = "block";
@@ -237,6 +238,7 @@ function ShowRightSide(index) {
 }
 
 function ShowRightSideSubPriject(index){
+    alert(" ShowRightSideSubPriject(index)")
     var target = document.getElementById('right-div');
     target.style.display = "block";
     var projectTile = document.getElementById('projecTitle');
@@ -291,7 +293,7 @@ function BackToProject() {
 
         }
 
-    }, 1500);
+    }, 1000);
     createElements('root', projectsArr.length);
 
 }
@@ -310,7 +312,7 @@ function fadeOutSubProject(){
 
         }
 
-    }, 1500);
+    }, 1000);
     // setTimeout(wow, 1000);
 }
 
