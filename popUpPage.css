@@ -1,0 +1,18 @@
+#pop-up-page {
+    width: 80%;
+    height: 719px;
+    border-radius: 10px;
+    background-color: #252A40;
+    margin: auto;
+    -webkit-box-shadow: 2px 4px 25px 10px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 25px 10px rgba(0,0,0,0.47);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    position: absolute;
+    display: none;
+    left: 13%;
+    top:58px;
+}

@@ -175,34 +175,44 @@ const subProjectsArr = [
         subProjectName: "Sub Project ",
         id: 9200
     },
-    
+
 ]
 const projectSelectionArr = ['box1', 'box2', 'box3', 'box4', 'box5', 'box6', 'box7', 'box8', 'box9']
 var tempMainProjectIndex = 0;
 var tempSubProjectIndex = 0;
 createElements('root', projectsArr.length);
 
-createRightSideElements(projectSelectionArr.length, 'right-div-grid')
+
 const searchInpt = document.getElementById('search');
 const box = document.querySelectorAll("main div");
 
 
 searchInpt.addEventListener("keyup", function (e) {
-    const q = event.target.value.toLowerCase();
-    console.log(q);
 
-    box.forEach((box) => {
-        console.log(box. querySelector("h5").textContent)
-        box.querySelector("h5").textContent.toLowerCase().startsWith(q)
-            ? (box.style.display = "") && console.log("good")
-            : (box.style.display = 'none')&& console.log("bad");
-
-    });
-
+    ShowOnlyOneLeftProjectBox()
 });
 
+function ShowOnlyOneLeftProjectBox() {
+    const box = document.querySelectorAll(".mainProject");
+    const searchInpt = document.getElementById('search');
+    console.log(searchInpt.value)
+    for (let index = 0; index < box.length; index++) {
+
+        var z = box[index].children[1].textContent.toLowerCase()
+
+        if (z.startsWith(searchInpt.value)) {
+            box[index].style.display = "block"
+        } else {
+            box[index].style.display = "none"
+        }
+
+    }
+}
+
 function ShowRightSide(index) {
-    alert("ShowRightSide(index)");
+    // alert("ShowRightSide(index)");
+    createRightSideElements(projectSelectionArr.length, 'right-div-grid')
+
     tempMainProjectIndex = index;
     var target = document.getElementById('right-div');
     target.style.display = "block";
@@ -212,8 +222,10 @@ function ShowRightSide(index) {
     manager.innerHTML = "Project Manager:   " + " " + projectsArr[index].manager;
     var img = document.getElementById("managerImg");
     img.src = projectsArr[index].image;
+
+    /////////////
     projectTitle = document.getElementById('project-sub-toggle');
-    projectTitle.innerText = "Sub Projects";
+    projectTitle.innerText = projectsArr[tempMainProjectIndex].projectName+" " +"Sub Projects";
     var projectsubtoggleimg = document.getElementById('project-sub-toggle-img');
     projectsubtoggleimg.style.display = "block";
     var input = document.getElementById('search');
@@ -232,32 +244,33 @@ function ShowRightSide(index) {
 
         }
 
-    }, 1500);
+    }, 1000);
     setTimeout(wow, 1000);
+    ShowOnlyOneLeftProjectBox();
 
 }
 
-function ShowRightSideSubPriject(index){
-    alert(" ShowRightSideSubPriject(index)")
+function ShowRightSideSubPriject(index) {
+    // alert("ShowRightSideSubPriject(index)")
     var target = document.getElementById('right-div');
     target.style.display = "block";
     var projectTile = document.getElementById('projecTitle');
-subProjecttitletoggle("block");
-   
-   
+    subProjecttitletoggle("block");
+
+
     projectTile.innerHTML = projectsArr[tempMainProjectIndex].projectName;
     var manager = document.getElementById('right-sub-title');
-    manager.innerHTML = "Go To Experiments" ;
+    manager.innerHTML = "Go To Experiments";
     var icon = document.createElement("span");
     manager.append(icon);
     var img = document.createElement("img");
     icon.append(img);
     img.src = "./images/play-solid.svg";
-    img.className="play-img";
+    img.className = "play-img";
 
-    
-  
-  
+
+
+
     projectTitle = document.getElementById('project-sub-toggle');
     projectTitle.innerText = "Sub Projects";
     var projectsubtoggleimg = document.getElementById('project-sub-toggle-img');
@@ -270,18 +283,20 @@ function wow() {
     createSubMenuElements(9, 'root')
 }
 
-function subProjecttitletoggle(disply){
-    var sub= document.getElementById('sub-Project-Name');
-    sub.innerHTML= subProjectsArr[tempSubProjectIndex].subProjectName+tempSubProjectIndex;
-    sub.style.display=disply;
+function subProjecttitletoggle(disply) {
+    // alert(" subProjecttitletoggle(disply)");
+    var sub = document.getElementById('sub-Project-Name');
+    sub.innerHTML = subProjectsArr[tempSubProjectIndex].subProjectName + tempSubProjectIndex;
+    sub.style.display = disply;
 }
 
 function BackToProject() {
+    // alert("BackToProject()")
     projectTitle = document.getElementById('project-sub-toggle');
     projectTitle.innerText = "Projects";
     var projectsubtoggleimg = document.getElementById('project-sub-toggle-img');
     projectsubtoggleimg.style.display = "none";
-    
+
     var x = document.querySelectorAll(".sub-projec-box");
     for (let i = 0; i < x.length; i++) {
         x[i].classList.add("fadeOut")
@@ -298,7 +313,7 @@ function BackToProject() {
 
 }
 
-function fadeOutSubProject(){
+function fadeOutSubProject() {
     var x = document.querySelectorAll(".sub-projec-box");
     console.log(x[0])
 
@@ -317,12 +332,13 @@ function fadeOutSubProject(){
 }
 
 function createElements(id, index) {
+    // alert("createElements(id, index)");
 
     for (let i = 0; i < index; i++) {
         var root = document.getElementById(id);
         const newDiv = document.createElement("div");
 
-        newDiv.classList.add("projectBox" + i, "projectBox","mainProject");
+        newDiv.classList.add("projectBox" + i, "projectBox", "mainProject");
 
         root.appendChild(newDiv);
         const title = document.createElement("h4");
@@ -348,38 +364,44 @@ function createElements(id, index) {
 
 }
 
-function createSubMenuElements(index , id){
-alert("createSubMenuElements(index , id)")
+function createSubMenuElements(index, id) {
+    // alert("createSubMenuElements(index, id)")
     for (let i = 0; i < index; i++) {
         var root = document.getElementById(id);
         const newDiv = document.createElement("div");
 
-        newDiv.classList.add( "projectBox","sub-projec-box");
+        newDiv.classList.add("projectBox", "sub-projec-box","mainProject");
 
         root.appendChild(newDiv);
+        const z = document.createElement("h5");
+        newDiv.appendChild(z);
+        z.style.display="none"
         const title = document.createElement("h5");
         newDiv.appendChild(title);
 
-        title.innerHTML = subProjectsArr[i].subProjectName+" "+i;
+        title.innerHTML = subProjectsArr[i].subProjectName + " " + i;
         title.className = "sub-title";
         title.projectIndex = i;
         title.addEventListener("click", function (e) {
-  tempSubProjectIndex=i;
+            tempSubProjectIndex = i;
             console.log(e.target.innerHTML)
-          
+
             ShowRightSideSubPriject(e.target.projectIndex)
-    
+
 
 
         })
- 
+
 
     }
 }
 
 
 function createRightSideElements(index, id) {
-  alert("createRightSideElements(index, id)")
+
+    // alert("createRightSideElements(index, id)")
+    DestroySubElements();
+
     const myImg = ["./images/calculator-solid.svg", "./images/file-regular.svg", "./images/vial-solid.svg", "./images/chart-gantt-solid.svg", "./images/registered-solid.svg", "./images/biohazard-solid.svg", "./images/clipboard-solid.svg", "./images/route-solid.svg", "./images/campground-solid.svg"]
     for (let i = 0; i < index; i++) {
         var root = document.getElementById(id);
@@ -413,22 +435,24 @@ function createRightSideElements(index, id) {
     }
 }
 
-function EnterSubMenuElements(){
+function EnterSubMenuElements() {
+    // alert(" EnterSubMenuElements()")
     DestroySubElements();
     addNewSubProjectElements(2, 'right-div-grid')
 }
 //destroy the right side elements grid
-function DestroySubElements(){
-var x  = document.querySelectorAll(".projectBoxRight");
-for (let i = 0; i < x.length; i++) {
-   x[i].remove();
-    
-}
+function DestroySubElements() {
+    // alert("DestroySubElements()")
+    var x = document.querySelectorAll(".projectBoxRight");
+    for (let i = 0; i < x.length; i++) {
+        x[i].remove();
+
+    }
 }
 
 ///now let build the sub menu bottons
-function addNewSubProjectElements(index , id){
-
+function addNewSubProjectElements(index, id) {
+    // alert("addNewSubProjectElements(index, id)")
     const myImg = ["./images/calculator-solid.svg", "./images/file-regular.svg", "./images/vial-solid.svg", "./images/chart-gantt-solid.svg", "./images/registered-solid.svg", "./images/biohazard-solid.svg", "./images/clipboard-solid.svg", "./images/route-solid.svg", "./images/campground-solid.svg"]
     for (let i = 0; i < index; i++) {
         var root = document.getElementById(id);
@@ -450,7 +474,9 @@ function addNewSubProjectElements(index , id){
         image.projectIndex = i;
         image.addEventListener("click", function (e) {
 
-
+console.log("add function here to watch the page")
+document.getElementById('innerBox').style.display="none";
+document.getElementById('pop-up-page').style.display="block";
 
 
         })
@@ -464,10 +490,13 @@ function addNewSubProjectElements(index , id){
 }
 
 document.addEventListener('keypress', function (e) {
-if(e.key === 'a'){
-    DestroySubElements();
-   
-}
+    // if (e.key === 'a') {
+    //     // DestroySubElements();
+    //     alert("working")
+    //     ShowOnlyOneLeftProjectBox();
+
+
+    // }
 });
 
 

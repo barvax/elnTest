@@ -57,3 +57,9 @@ document.addEventListener('keypress', function (e) {
     // }
     
 }});
+
+function BackFromHome(){
+    document.getElementById('pop-up-page').style.display="none";
+    document.getElementById('innerBox').style.display="grid";
+
+}
