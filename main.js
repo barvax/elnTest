@@ -398,7 +398,7 @@ function createRightSideElements(index, id) {
         image.projectIndex = i;
         image.addEventListener("click", function (e) {
 
-
+            EnterSubMenuElements();
 
 
         })
@@ -409,6 +409,63 @@ function createRightSideElements(index, id) {
         subtitle.innerHTML = "box title.."
     }
 }
+
+function EnterSubMenuElements(){
+    DestroySubElements();
+    addNewSubProjectElements(2, 'right-div-grid')
+}
+//destroy the right side elements grid
+function DestroySubElements(){
+var x  = document.querySelectorAll(".projectBoxRight");
+for (let i = 0; i < x.length; i++) {
+   x[i].remove();
+    
+}
+}
+
+///now let build the sub menu bottons
+function addNewSubProjectElements(index , id){
+
+    const myImg = ["./images/calculator-solid.svg", "./images/file-regular.svg", "./images/vial-solid.svg", "./images/chart-gantt-solid.svg", "./images/registered-solid.svg", "./images/biohazard-solid.svg", "./images/clipboard-solid.svg", "./images/route-solid.svg", "./images/campground-solid.svg"]
+    for (let i = 0; i < index; i++) {
+        var root = document.getElementById(id);
+        const newDiv = document.createElement("div");
+
+        newDiv.classList.add("projectBoxRight");
+
+        root.appendChild(newDiv);
+
+
+        const image = document.createElement("img");
+        image.classList.add("image");
+
+        newDiv.appendChild(image);
+
+        image.innerHTML = projectSelectionArr[i];
+
+        image.src = myImg[i];
+        image.projectIndex = i;
+        image.addEventListener("click", function (e) {
+
+
+
+
+        })
+
+        const subtitle = document.createElement("h5");
+        subtitle.className = "subTitle";
+        newDiv.appendChild(subtitle);
+        subtitle.innerHTML = "box title.."
+    }
+
+}
+
+document.addEventListener('keypress', function (e) {
+if(e.key === 'a'){
+    DestroySubElements();
+   
+}
+});
 
 
 

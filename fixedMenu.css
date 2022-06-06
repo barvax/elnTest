@@ -1,0 +1,23 @@
+.fixed-menu{
+position: absolute;
+width: 100px;
+background-color: #252A40;
+top: 58px;
+border-radius: 10px;
+height: 720px;
+left: 4%;
+
+}
+.fixed-menu>div{
+position: relative;
+top:8%;
+}
+.fixed-menu-item{
+    width:50px;
+    height: 50px;
+    /* background-color: rgb(67, 67, 67); */
+    margin:auto;
+    margin-top: 25px;
+    color: white;
+
+}

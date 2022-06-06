@@ -1,0 +1,61 @@
+.expBox{
+    width: 80%;
+    height: 90%;
+border-radius: 10px;
+    background-color: #252A40;
+    margin: auto;
+    -webkit-box-shadow: 2px 4px 25px 10px rgba(0,0,0,0.47); 
+    box-shadow: 2px 4px 25px 10px rgba(0,0,0,0.47);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    display: none;
+    
+}
+
+.top-menu{
+    /* background-color: red; */
+    height:20px;
+   margin: auto;
+  width: 800px;
+ 
+  display: flex;
+position: relative;
+
+overflow-x: scroll;
+transition: height 1s;
+scrollbar-width: thin;
+    
+}
+
+/* 
+  .top-menu::-webkit-scrollbar {
+    width: 2px;
+  } */
+  
+
+  
+
+
+
+  .top-menu:hover{
+      height: 100px;
+  }
+    
+
+
+.testBox{
+    background-color:white;
+    min-width: 100px;
+    height:40px;
+    margin: 20px;
+    border-radius: 10px;
+  
+
+  
+}
+.sub-project-topBar-title{
+color: #252A40;
+}
