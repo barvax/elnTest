@@ -347,7 +347,7 @@ function createElements(id, index) {
 }
 
 function createSubMenuElements(index , id){
-
+alert("createSubMenuElements(index , id)")
     for (let i = 0; i < index; i++) {
         var root = document.getElementById(id);
         const newDiv = document.createElement("div");
@@ -377,6 +377,7 @@ function createSubMenuElements(index , id){
 
 
 function createRightSideElements(index, id) {
+  alert("createRightSideElements(index, id)")
     const myImg = ["./images/calculator-solid.svg", "./images/file-regular.svg", "./images/vial-solid.svg", "./images/chart-gantt-solid.svg", "./images/registered-solid.svg", "./images/biohazard-solid.svg", "./images/clipboard-solid.svg", "./images/route-solid.svg", "./images/campground-solid.svg"]
     for (let i = 0; i < index; i++) {
         var root = document.getElementById(id);
