@@ -338,7 +338,7 @@ function createElements(id, index) {
         var root = document.getElementById(id);
         const newDiv = document.createElement("div");
 
-        newDiv.classList.add("projectBox" + i, "projectBox", "mainProject");
+        newDiv.classList.add("sub-projec-box","projectBox" + i, "projectBox", "mainProject");
 
         root.appendChild(newDiv);
         const title = document.createElement("h4");
