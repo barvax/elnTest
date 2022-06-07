@@ -370,7 +370,7 @@ function createSubMenuElements(index, id) {
         var root = document.getElementById(id);
         const newDiv = document.createElement("div");
 
-        newDiv.classList.add("projectBox", "sub-projec-box","mainProject");
+        newDiv.classList.add("projectBox", "projectBox" + i,"mainProject");
 
         root.appendChild(newDiv);
         const z = document.createElement("h5");
